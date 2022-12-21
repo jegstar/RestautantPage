@@ -1,43 +1,42 @@
-import ny from './assets/ny_1.jpg'
-import pp from './assets/pulled-pork-pizza_1.jpg'
-import pepper from './assets/pepperoni-pizza.jpg'
+import ny from './assets/ny_1.jpg';
+import pp from './assets/pulled-pork-pizza_1.jpg';
+import pepper from './assets/pepperoni-pizza.jpg';
 
 export default function makeMenu() {
-    const menu = document.createElement('div');
-    menu.classList.add('menu')
+  const menu = document.createElement('div');
+  menu.classList.add('menu');
 
-    let left = true;
-    const pizzas = [
-        {image:ny, name:"New York Pizza",  desc:"Cheese and tomata!"},
-        {image:pp, name:"Pulled Pork",  desc:"Good piggy!"},
-        {image:pepper, name:"Pepperoni",  desc:"Spicy piggy!"}]
-    console.log(pizzas)
-    pizzas.forEach(element => {
-        const item = document.createElement('div');
-        item.classList.add('menu-item')
-        item.classList.add(left?'left':'right')
-        left = !left
+  let left = true;
+  const pizzas = [
+    { image: ny, name: 'New York Pizza', desc: 'Cheese and tomata!' },
+    { image: pp, name: 'Pulled Pork', desc: 'Good piggy!' },
+    { image: pepper, name: 'Pepperoni', desc: 'Spicy piggy!' },
+  ];
 
-        const item_column = document.createElement('div')
-        const item_title = document.createElement('div')
-        item_title.classList.add('menu-item-title')
-        item_title.innerText = element.name
-        item_column.appendChild(item_title)
+  pizzas.forEach((element) => {
+    const item = document.createElement('div');
+    item.classList.add('menu-item');
+    item.classList.add(left ? 'left' : 'right');
+    left = !left;
 
-        const text = document.createElement('div')
-        text.classList.add('menu-item-text')
-        text.innerText = element.desc
-        item_column.appendChild(text)
+    const itemColumn = document.createElement('div');
+    const itemTitle = document.createElement('div');
+    itemTitle.classList.add('menu-item-title');
+    itemTitle.innerText = element.name;
+    itemColumn.appendChild(itemTitle);
 
-        item.appendChild(item_column)
-        
-        const img = document.createElement('img')
-        img.src = element.image
-        item.appendChild(img)
+    const text = document.createElement('div');
+    text.classList.add('menu-item-text');
+    text.innerText = element.desc;
+    itemColumn.appendChild(text);
 
-        menu.appendChild(item)
-    
-    });
-    console.log(menu)
-    return menu;
+    item.appendChild(itemColumn);
+
+    const img = document.createElement('img');
+    img.src = element.image;
+    item.appendChild(img);
+
+    menu.appendChild(item);
+  });
+  return menu;
 }
