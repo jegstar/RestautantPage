@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Deco";
+    src: url('./assets/Market_Deco.ttf'); 
+
+}
+
+img {
+    width: 200px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    gap:2em;
+    margin-top: 1em;
+}
+
+.menu-item-text {
+    display: flex;
+    min-width: 200px;
+}
+
+.left {
+    flex-direction: row;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.menu-item-title {
+    font-family: "Deco";
+    font-size: 2em;
+}
+
+.main-title {
+    margin-top: 0.5em;
+    font-family: "Deco";
+    font-size: 10em;
+    text-align: center;
+    width: 100%; 
+}
+
+hr {
+    margin-top: -1.5rem;
+    height: 1rem;
+    background-color: black;
+}
+
+html, body {
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    border: 2px solid red;
+}
